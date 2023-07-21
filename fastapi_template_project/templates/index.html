@@ -2,13 +2,31 @@
 <html>
 <head>
     <title>User List</title>
+    <style>
+        tr,th,td,table{
+            border: 1px  solid black;
+            border-collapse: collapse;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
+    <table>
     <h1>User List</h1>
-    <ul>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>age</th>
+    </tr> 
         {% for user in users %}
-            <li>{{user.id}}) {{ user.username }} - {{ user.email }}</li>
+        <tr>
+            <td>{{user['id']}}</td>
+            <td>{{user['username']}}</td>
+            <td>{{user['email']}}</td>
+            <td>{{user['age']}}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
 </body>
 </html>
