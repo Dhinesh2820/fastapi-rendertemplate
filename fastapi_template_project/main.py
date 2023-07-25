@@ -45,7 +45,7 @@ def get_users(db: Session = Depends(get_db)):
 
 @app.post("/users")
 def create_user(user_data: CreateUser, db: Session = Depends(get_db)):
-    user = User(username=user_data.username, email=user_data.email)
+    user = User(username=user_data.username, email=user_data.email,age=user_data.age)
     db.add(user)
     db.commit()
     db.refresh(user)

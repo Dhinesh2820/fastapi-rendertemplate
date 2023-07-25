@@ -15,3 +15,4 @@ class User(Base):
 class CreateUser(BaseModel):
     username: str
     email: str
+    age:int 
